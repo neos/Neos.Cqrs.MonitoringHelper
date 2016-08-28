@@ -1,0 +1,7 @@
+Ttree:
+  Cqrs:
+    MonitoringHelper:
+      command:
+        monitoring:
+          commandHandlerMonitoring:
+            enabled: true
