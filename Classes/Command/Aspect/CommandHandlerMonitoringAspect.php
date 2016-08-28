@@ -44,7 +44,7 @@ class CommandHandlerMonitoringAspect
             $command = $joinPoint->getMethodArgument('command');
 
             $this->logger->log(vsprintf('action=monitoring type=command-handler command="%s" elapsed_time=%f', [
-                EventType::create($command),
+                EventType::get($command),
                 microtime(true) - $startTime
             ]), LOG_DEBUG);
         } else {
