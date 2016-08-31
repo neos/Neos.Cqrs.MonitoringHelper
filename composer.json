@@ -1,19 +1,19 @@
 {
-    "name": "ttree/cqrs-monitoringhelper",
+    "name": "neos/cqrs-monitoringhelper",
     "type": "neos-package",
     "description": "Lean and opinionated way to integrate CQRS pattern in your Flow framework package, monitoring helper packages",
     "require": {
         "typo3/flow": "*",
-        "ttree/cqrs": "*"
+        "neos/cqrs": "*"
     },
     "autoload": {
         "psr-4": {
-            "Ttree\\Cqrs\\MonitoringHelper\\": "Classes/"
+            "Neos\\Cqrs\\MonitoringHelper\\": "Classes/"
         }
     },
     "extra": {
         "neos": {
-            "package-key": "Ttree.Cqrs.MonitoringHelper"
+            "package-key": "Neos.Cqrs.MonitoringHelper"
         }
     }
 }

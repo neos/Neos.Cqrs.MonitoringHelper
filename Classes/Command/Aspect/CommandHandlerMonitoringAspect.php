@@ -1,5 +1,5 @@
 <?php
-namespace Ttree\Cqrs\MonitoringHelper\Command\Aspect;
+namespace Neos\Cqrs\MonitoringHelper\Command\Aspect;
 
 /*
  * This file is part of the Neos.Cqrs package.
@@ -11,7 +11,7 @@ namespace Ttree\Cqrs\MonitoringHelper\Command\Aspect;
  * source code.
  */
 
-use Ttree\Cqrs\Event\EventType;
+use Neos\Cqrs\Event\EventType;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Aop\JoinPointInterface;
 use TYPO3\Flow\Log\SystemLoggerInterface;
@@ -35,7 +35,7 @@ class CommandHandlerMonitoringAspect
     protected $enabled;
 
     /**
-     * @Flow\Around("within(Ttree\Cqrs\Command\CommandHandlerInterface) && method(public .*->handle())")
+     * @Flow\Around("within(Neos\Cqrs\Command\CommandHandlerInterface) && method(public .*->handle())")
      * @param JoinPointInterface $joinPoint
      */
     public function log(JoinPointInterface $joinPoint)
