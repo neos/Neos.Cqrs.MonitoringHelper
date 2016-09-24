@@ -11,10 +11,10 @@ namespace Neos\Cqrs\MonitoringHelper\Command\Aspect;
  * source code.
  */
 
-use Neos\Cqrs\Event\EventType;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Aop\JoinPointInterface;
 use TYPO3\Flow\Log\SystemLoggerInterface;
+use TYPO3\Flow\Utility\TypeHandling;
 
 /**
  * @Flow\Scope("singleton")
@@ -48,7 +48,7 @@ class CommandHandlerMonitoringAspect
             $command = $joinPoint->getMethodArgument('command');
 
             $this->logger->log(vsprintf('action=monitoring type=command-handler command="%s" elapsed_time=%f', [
-                EventType::get($command),
+                TypeHandling::getTypeForValue($command),
                 microtime(true) - $startTime
             ]), LOG_DEBUG);
         } else {
